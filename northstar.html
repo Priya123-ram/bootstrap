@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar</title>
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+
+  <!-- Link to Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"" rel=" stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h6 {
+      margin: 0;
+      padding: 0;
+      background-color: yellow;
+      display: inline-block;
+      margin-left: 35px;
+      font-size: small;
+    }
+
+    p {
+      margin-left: 30px;
+      font-style: normal;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      text-align: justify;
+
+    }
+
+    h1 {
+      margin-left: 0;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    h3 {
+      color: lightgrey;
+      font-style: normal;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      text-align: center;
+    }
+
+    p1 {
+      color: darkgray;
+      font-weight: light;
+      text-align: center;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      display: block;
+
+    }
+
+    h5,
+    h2 {
+      color: yellow;
+      font-style: normal;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    h7 {
+      color: lightgrey;
+      font-style: normal;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      align-items: center;
+      padding-left: 270px;
+
+
+    }
+
+    .red-overline {
+      text-decoration: overline;
+      text-decoration-color: red;
+      /* Red color for the overline */
+      text-decoration-thickness: 2px;
+      /* Optional: Adjust the thickness of the overline */
+    }
+
+    .time-display {
+      margin-left: 100px;
+      display: inline-block;
+      background-color: yellow;
+      font-weight: bold;
+      font-size: small;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 20px;
+    }
+
+    .color1 {
+      background-color: yellow;
+      display: inline-block;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      min-height: 50px;
+      margin: 5px;
+    }
+
+    .btn-custom {
+      background-color: red;
+      /* Green background */
+      color: white;
+      /* White text */
+      border: none;
+      /* Remove border */
+      border-radius: 5px;
+      /* Rounded corners */
+      padding: 10px 20px;
+      /* Padding */
+    }
+
+    .left-section {
+      background-color: #f8f9fa;
+      padding: 30px;
+      border-radius: 8px;
+      background-color: bisque;
+    }
+
+    .right-section {
+      background-color: black;
+      padding: 45px;
+      border-radius: 8px;
+
+    }
+
+    .row {
+      margin-top: 20px;
+
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Flag dropdown box */
+    .flag-box {
+      width: 50px;
+      height: 40px;
+      margin-right: 10px;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+    }
+
+    .flag-icon {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Phone number input field */
+    .form-control {
+      font-size: 14px;
+      padding: 8px 12px;
+      font-weight: bolder;
+
+    }
+
+    .terms-checkbox {
+      display: flex;
+      align-items: first baseline;
+      /* Vertically align the checkbox and text */
+    }
+
+    .terms-checkbox input {
+      margin-right: 10px;
+      /* Space between the checkbox and the text */
+    }
+
+    .terms-checkbox a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .click {
+      color: yellow;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px 2px white;
+      border-right: 5px solid black;
+      border-bottom: 5px solid black;
+
+    }
+
+    main {
+      background-color: bisque;
+      margin: 0;
+      padding-top: 30px;
+      background: linear-gradient(to bottom, bisque 60%, white 40%);
+
+    }
+
+    .box1 {
+
+      background-color: black;
+      /* Set background color to black */
+      color: white;
+      /* Set text color to white for contrast */
+      padding: 20px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      /* Vertically center content */
+      justify-content: space-between;
+      height: 300px;
+      width: 500px;
+      /* Space out the content and image */
+    }
+
+    .box1 img {
+      width: 60%;
+      /* Set image width to 40% of the box */
+      height: auto;
+      border-radius: 5px;
+      /* Optional: rounded corners for the image */
+    }
+
+
+
+    .box1 .content {
+      position: absolute;
+      width: 100%;
+      padding-top: 0px;
+    }
+
+
+
+    /* Content takes up the rest of the space */
+
+    .watch-now-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: black;
+      background-color: yellow;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .watch-now-btn i {
+      margin-left: 12px;
+      /* Space between the icon and text */
+    }
+
+    .content-partner h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: x-large;
+      padding-top: 80px;
+      margin-left: 0;
+      text-decoration: underline;
+      text-decoration-color: yellow;
+      /* Red color for the overline */
+      text-decoration-thickness: 5px;
+    }
+
+    .content-partner p {
+      margin-left: 0;
+    }
+
+    .logo-container {
+      display: flex;
+      /* Use flexbox for horizontal alignment */
+      justify-content: space-between;
+      /* Space out logos with equal gap */
+      gap: 20px;
+      /* Set the gap between the logos */
+      padding: 0px;
+      /* Optional: Add padding around the container */
+    }
+
+    .logo img {
+      width: 100px;
+      /* Set the size of the logo */
+      height: auto;
+      /* Maintain aspect ratio */
+      transform: rotate(120deg);
+      /* Rotate the logo by 120 degrees */
+      transition: transform 0.5s ease;
+      /* Optional: Add smooth rotation transition */
+    }
+
+    .image-container {
+      position: relative;
+      /* Container for positioning images */
+      width: 400px;
+      /* Width of the container */
+      height: 400px;
+      /* Height of the container */
+      margin-top: 0px;
+      /* Optional: Space above the container */
+    }
+
+    .image-container img {
+      position: absolute;
+      /* Absolute positioning for the images */
+      width: 150px;
+      /* Width of the images */
+      height: auto;
+      /* Maintain aspect ratio */
+      object-fit: cover;
+      /* Ensure the image covers the container */
+    }
+
+    /* First Image (rotated 30 degrees) */
+    .image1 {
+      transform: rotate(30deg);
+      /* Rotate the first image by 30 degrees clockwise */
+      top: 20px;
+      /* Position it lower from the top */
+      left: 200px;
+      /* Position it on the left side */
+    }
+
+    /* Second Image (rotated -30 degrees) */
+    .image2 {
+      transform: rotate(-30deg);
+      /* Rotate the second image by -30 degrees counterclockwise */
+      top: 20px;
+      /* Position it lower from the top */
+      left: 100px;
+      /* Position it on the right side */
+    }
+
+    .column-container {
+      display: flex;
+      /* Use flexbox layout */
+      justify-content: flex-end;
+      /* Align items to the right */
+      align-items: center;
+      /* Center items vertically */
+      height: 0px;
+      /* Height of the container */
+      padding: 0px;
+      /* Optional padding for spacing */
+    }
+
+
+
+    .comments h6 {
+      font-size: x-small;
+      padding: 3px;
+    }
+
+    .comments h3 {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: white;
+      text-align: left;
+      margin-left: 30px;
+      padding-top: 5px;
+
+    }
+
+    .comments p {
+      text-align: left;
+
+    }
+
+    .review-list {
+      display: flex;
+      /* Flexbox layout for row */
+      justify-content: space-evenly;
+      /* Space out the review items evenly */
+      align-items: left;
+      /* Vertically center the items */
+      max-width: 100%;
+      margin-left: 0px;
+      padding-left: 0px;
+      background-color: red;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+      /* Allow wrapping for smaller screens */
+    }
+
+    .review-item {
+      display: flex;
+      flex-direction: column;
+      /* Stack icon, name, and stars vertically */
+      align-items: center;
+      margin-right: 0px;
+      text-align: left;
+      padding-right: 170px;
+
+      padding: 0px;
+      border-radius: 5px;
+      width: 150px;
+    }
+
+    .review-details {
+      text-align: left;
+      padding-right: 0px;
+
+    }
+
+    .review-icon img {
+      width: 40px;
+      /* Set width of the icons */
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .review-details h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .review-stars {
+      display: flex;
+      justify-content: center;
+      margin: 5px 0;
+    }
+
+    .star {
+      font-size: 20px;
+      color: #FFD700;
+      /* Gold color for stars */
+    }
+
+    .review-rating {
+      font-size: 16px;
+      color: #777;
+      text-align: center;
+    }
+
+    /* Optional: Add responsive styles for smaller screens */
+    @media (max-width: 768px) {
+      .reviews-list {
+        flex-direction: column;
+        /* Stack items vertically on smaller screens */
+        align-items: left;
+      }
+
+      .review-item {
+        margin-bottom: 20px;
+        /* Space between items in mobile view */
+      }
+    }
+
+    /* Left side content */
+
+    /* Right side image */
+    .image {
+      position: absolute;
+
+    }
+
+    .reviews {
+      display: flex;
+      /* Use flexbox to arrange items horizontally */
+      justify-content: space-between;
+      /* Space out content and image */
+      align-items: left;
+      /* Vertically center the content and image */
+      padding: 200px;
+      height: 95vh;
+      padding-top: 20px;
+      background-color: red;
+      padding-bottom: 0px;
+      /* Make the container take full viewport height */
+    }
+
+    .review-details h3 {
+      text-align: center;
+    }
+
+    .comments {
+      flex: 1;
+      /* Take available space */
+      text-align: left;
+      justify-content: space-between;
+      padding-left: 0px;
+
+    }
+
+    .social-icon {
+      font-size: 24px;
+      /* Adjust the size of the icon */
+      vertical-align: middle;
+      /* Align the icon with the text */
+      margin-right: 8px;
+      /* Space between the icon and the text */
+    }
+
+    .social-text {
+      font-size: 20px;
+      /* Adjust the size of the text */
+      vertical-align: middle;
+      /* Align the text with the icon */
+    }
+
+    .images-container {
+      position: relative;
+      width: 30%;
+      height: 100px;
+      /* Adjust height based on your needs */
+    }
+
+    .image-top {
+      position: absolute;
+      top: 150px;
+      left: 50px;
+      width: 80%;
+      /* Adjust size as needed */
+      z-index: 1;
+      height: 100px;
+      /* Z-index for Image 1 */
+    }
+
+    .image-bottom {
+      position: absolute;
+      top: 20px;
+      /* Adjust position to create overlap */
+      left: 50px;
+      /* Adjust position to create overlap */
+      width: 80%;
+      /* Adjust size as needed */
+      z-index: 2;
+      height: 100px;
+      /* Z-index for Image 2 */
+    }
+
+    .image-merge {
+      position: absolute;
+      top: 80px;
+      /* Adjust position to create overlap */
+      left: 250px;
+      /* Adjust position to create overlap */
+      width: 80%;
+      /* Adjust size as needed */
+      z-index: 3;
+      height: 100px;
+      /* Z-index for Image 3 to appear on top */
+    }
+
+
+    /* Box with shadow at the bottom */
+    .curved-box {
+      width: 1000px;
+      height: 200px;
+      background-color: bisque;
+      border-radius: 20px;
+      /* This creates a uniform curve on all corners */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      padding-top: 10px;
+      color: black;
+      border-left: 2px solid red;
+      border-right: 2px solid red;
+      border-top: 2px solid red;
+      border-bottom: 10px solid red;
+      border-color: red;
+      margin-left: 200px;
+      margin-top: 50px;
+    }
+
+    /* Container to hold the sections horizontally */
+    .section {
+      display: flex;
+      justify-content: space-between;
+      /* Ensures space between the sections */
+      align-items: center;
+      /* Vertically center align the items */
+      padding: 10px;
+    }
+
+    /* Individual section styles */
+    .section1 h2 {
+      margin-top: 0;
+      font-weight: bold;
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      padding-left: 20px;
+    }
+
+    .section1 p {
+      font-size: small;
+      padding: 0px;
+      text-align: left;
+    }
+
+    .press {
+      color: yellow;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      width: 18%;
+      border-radius: 8px;
+      text-align: center;
+      border-right: 5px solid black;
+      border-bottom: 5px solid black;
+
+    }
+
+    /* Container to center content */
+    .container-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      /* Centers the box vertically and horizontally */
+      padding-top: 20px;
+      padding-right: 90px;
+    }
+
+    /* Box for date and content */
+    .boxes {
+      width: 200px;
+      padding: 20px;
+      border: 2px dotted black;
+      /* Dotted border */
+      position: relative;
+      /* Needed for positioning the date */
+      border-radius: 3px;
+    }
+
+    .date {
+      position: absolute;
+      top: -15px;
+      /* Move the date above the box */
+      left: 50%;
+      transform: translateX(-50%);
+      /* Center the date horizontally */
+      padding: 5px 10px;
+      font-size: 7px;
+      border-radius: 4px;
+      display: inline-block;
+      background-color: yellow;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .contents {
+      text-align: center;
+      font-size: 18px;
+      color: black;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .cma {
+      text-align: center;
+      padding: 45px;
+      align-items: center;
+      background-color: bisque;
+      margin-top: 50px;
+
+    }
+
+    .cma h1 {
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: underline;
+      text-decoration-color: yellow;
+      /* Red color for the overline */
+      text-decoration-thickness: 5px;
+    }
+
+    .cma p {
+      padding-left: 300px;
+      padding-right: 300px;
+    }
+    .custom-text-color {
+    color:yellow;  /* Replace with your desired color */
+  }
+  .division {
+    display:flex;
+    padding-left: 30px;
+    background-image:url("bg-image.jpg");
+    padding-top: 30px;
+    margin:100px;
+    margin-top:20px;
+  }
+
+  .division p{
+    padding-top:30px;
+  }
+  .register-btn {
+      margin-top: 0px;
+      background-color: red; 
+      color: yellow;
+      padding: 12px 24px; /* Padding around the text */
+      font-size: 16px;
+      font-family: Arial, sans-serif; /* Remove default border */
+      position: relative;
+       box-shadow: 2px 2px  black; 
+      border-right: 5px solid white; 
+      border-bottom: 5px solid white; /*
+      
+    }
+
+    /* Apply black border only to the right and bottom sides */
+    
+}
+.rows{
+        display: flex;
+        margin-right:10px;
+        margin-left:100px;
+    }
+    .square {
+      position: relative;
+      border: 5px solid red;
+      padding: 3px;
+      margin: 5px;
+      align-items: left;
+      height: 200px; /* Square shape, height = width */
+      width: 200px; /* Square shape, width = height */
+      padding-top:50px;
+      
+    }
+
+    /* Position the icon at the top-right corner */
+    .icon-top-right {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: gray;
+    }
+
+    /* Heading and Paragraph styling */
+    .square h2 {
+      color:black;
+      text-align: left;
+      font-weight: bolder;
+      text-decoration: underline;
+      text-decoration-color: yellow;
+      font-size:xx-large;     
+      padding-left:30px;
+    }
+
+    .square p {
+      text-align: left;
+      font-weight: bold;
+      font-size:x-large;
+      font-family:Arial, Helvetica, sans-serif;
+    
+    }
+    footer{
+      text-align:center;
+      background-image:url("bg-image.jpg");
+      margin-top:30px;
+      padding-top:20px;
+
+    }
+
+    .dashed-box {
+      border: 4px dashed white; /* Blue dashed border */
+      color:white;
+      padding: 10px;
+      position: relative;
+      text-align: center;
+      height: 100px; /* Adjust as per your design */
+      display: flex;
+      flex-direction: column;
+      margin-left:100px;
+      margin-right:50px;
+      
+    
+    }
+    .dashed-box p{
+      text-align:center;
+    }
+
+    /* Register Button style */
+    .register-btn {
+      background-color: black; /* WhatsApp green color */
+      color: yellow;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      width: 200px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .register-btn i {
+      margin-right: 10px;
+      background-color:green; /* Space between icon and text */
+    }
+    .assistance p{
+      text-align:center;
+      color:white;
+      font-size: small;
+      padding-top:50px;
+      padding-left:30px;
+    }
+
+ 
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="box">
+      <img src="./northstar logo.png" alt="image" width="100px" />
+      <div class="inside">Education Partners</div>
+      <div class="inside">World Class Mentor</div>
+      <div class="inside">CMA as Career?</div>
+      <div class="inside">Our Alumni</div>
+      <div class="inside">Road Map</div>
+      <div class="inside">Why NSA?</div>
+      <div class="inside">100% Placement</div>
+      <button class="btn-custom">Enroll Now</button>
+
+
+  </header>
+  <main>
+
+    <!-- Main Content Section -->
+
+    <div class="container mt-4">
+      <div class="row">
+        <!-- Left Side (Content Section) -->
+        <div class="col-md-7 column">
+          <div class="left-section">
+            <h1>Unlock your Financial</h1>
+            <h1>potential <span class="color1">with CMA</span></h1>
+            <h6>ABOUT COURSE</h6>
+            <p>CMA (Certified Management Accountant) USA is a globally recognized professional certification in the
+              field
+              of management accounting, offered by the Institute of Management Accountants (IMA). The certification
+              demonstrates expertise in financial planning, analysis, control, decision support, and professional
+              ethics.</p>
+
+
+            <div class="box1">
+              <!-- Image on the left -->
+              <img src="manpic.png" alt="Man Image">
+
+
+
+              <!-- Content on the right -->
+              <div class="content">
+                <h5>Earn your US CMA</h5>
+                <h5>in Less than </h5>
+                <h5> 12 Months</h5>
+                <h7 class="red-overline">Learn from Globally</h7>
+                <h7>Renowned CMA Instructor</h7>
+                <h2>M.Irfat</h2>
+                <div class="container text-center mt-5">
+                  <!-- Watch Now Button -->
+                  <button class="watch-now-btn"> Watch Now <i class="fas fa-play"></i>
+                  </button>
+
+                </div>
+              </div>
+            </div>
+            <div class="content-partner">
+              <h1>Content Partner</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut recusandae iusto quod quae, ad nihil
+                beatae facilis veniam, voluptatibus assumenda deleniti doloribus alias. Consequuntur ab dolores pariatur
+                fugit? Nemo, error.</p>
+            </div>
+
+            <div class="logo-container">
+              <img src="./northstar logo.png" alt="image" width="150px" />
+              <img src="./img.png" alt="image" width="70px" />
+              <img src="./becker.png" alt="image" width="100px" />
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- Other columns can go here -->
+
+        <!-- Right Side (Form Section) -->
+
+        <!-- Right Side (Form Section) -->
+        <div class="col-md-5 ">
+          <div class="right-section">
+            <h3>Future Proof your</h3>
+            <h3>Finance Career</h3>
+            <p1>Unlock your potential and take the first step towards success with World Class Mentor Mr. M Irfat in our
+              upcoming CMA USA Live Webinar</p1>
+            <p class="time-display">12 - 02 - 2023 | 12:00 PM</p>
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" id="username" placeholder="Enter your full name*">
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Your email address*">
+              </div>
+              <div class="mb-3">
+                <div class="form-group">
+                  <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle flag-box" type="button"
+                      id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="flag-icon flag-icon-in"></span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#" data-country="us" data-name="United States">
+                        <span class="flag-icon flag-icon-us flag-box"></span> United States
+                      </a>
+                      <a class="dropdown-item" href="#" data-country="gb" data-name="United Kingdom">
+                        <span class="flag-icon flag-icon-gb flag-box"></span> United Kingdom
+                      </a>
+                      <a class="dropdown-item" href="#" data-country="in" data-name="India">
+                        <span class="flag-icon flag-icon-it flag-box"></span> India
+                      </a>
+                    </div>
+                  </div>
+                  <input type="tel" class="form-control" id="phone" placeholder="Enter your Phone Number*">
+                </div>
+                <p style="color:white">Let us know about your basic qualification</p>
+                <div style="color:lightgray" font-size="20px">
+                  <input type="radio" id="Student" name="qualification" value="Student">
+                  <label for="Student">Student</label>
+                  <input type="radio" id="Professional" name="qualification" value="Professional">
+                  <label for="Professional">Professional</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" id="city" placeholder="Enter your City*">
+              </div>
+              <div class="terms-checkbox" style="color:lightgray" font-size="20px">
+                <input type="Checkbox" id="terms" name="policy" value="terms">
+                <label for="terms">Accept terms, privacy policy and get seamless support on WhatsApp</label>
+              </div>
+              <div class="click">Register for the Webinar</div>
+
+          </div>
+        </div>
+      </div>
+      </form>
+      <div class="column-container">
+        <div class="image-container">
+          <img class="image1" src="northstarlogo.jpg" alt="Logo 1" height="100px" width="100px">
+          <img class="image2" src="northstarlogo.jpg" alt="Logo 2" height="100px" width="100px">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="card-body d-flex flex-column justify-content-start align-items-end">
+      <div class="image">
+        <img src="manimg.png" alt="Man Image" class="img" alt="Placeholder Image" height="700px" width="600px">
+      </div>
+    </div>
+
+    <div class="reviews">
+
+      <div class="comments">
+        <h6>MEET M.IRFAT| INDIA'S LEADING CMA & CPA INSTRUCTOR</h6>
+        <h3>A Professional CA, CMA(USA),CPA, and</h3>
+        <h3>CIMA(UK)with a Passion for Education</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut recusandae </p>
+        <p>iusto quod quae, ad nihil beatae facilis veniam, voluptatibus assumenda </p>
+        <p>deleniti doloribus alias. Consequuntur ab dolores pariatur fugit? Nemo.</p>
+
+        <div class="d-flex justify-content-start gap-2">
+          <div class="review-list">
+            <div class="review-item">
+              <div class="review-icon">
+                <!-- Google icon (You can replace it with an actual icon or image) -->
+
+              </div>
+              <div class="review-details">
+                <div class="review-stars">
+                  <!-- 5 stars for Google -->
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <h3>Google</h3>
+                <div class="review-rating">4.8 Star</div>
+              </div>
+            </div>
+
+            <!-- Facebook Review -->
+            <div class="review-item">
+              <div class="review-icon">
+                <!-- Facebook icon (You can replace it with an actual icon or image) -->
+
+              </div>
+              <div class="review-details">
+
+                <div class="review-stars">
+                  <!-- 4 stars for Facebook -->
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <div>
+                  <i class="fab fa-facebook social-icon"></i>
+                  <span class="social-text">Facebook</span>
+                </div>
+                <div class="review-rating">4.8 Star</div>
+              </div>
+            </div>
+
+            <!-- Justdial Review -->
+            <div class="review-item">
+              <div class="review-icon">
+                <!-- Justdial icon (You can replace it with an actual icon or image) -->
+
+              </div>
+              <div class="review-details">
+
+                <div class="review-stars">
+                  <!-- 4.2 stars for Justdial -->
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star" style="color: #ccc;">★</span> <!-- Incomplete star -->
+                </div>
+                <h3>Justdial</h3>
+                <div class="review-rating">4.9 Star</div>
+              </div>
+            </div>
+
+            <!-- Sulekha Review -->
+            <div class="review-item">
+              <div class="review-icon">
+                <!-- Sulekha icon (You can replace it with an actual icon or image) -->
+
+              </div>
+              <div class="review-details">
+
+                <div class="review-stars">
+                  <!-- 4.6 stars for Sulekha -->
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star" style="color: #ccc;">★</span> <!-- Incomplete star -->
+                </div>
+                <div>
+                  <i class="fas fa-briefcase social-icon"></i> <!-- Briefcase Icon as placeholder -->
+                  <span class="social-text">Sulekha</span>
+                </div>
+
+                <div class="review-rating">5 Star</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="images-container">
+          <img src="img1.png" class="image-top" alt="Image 1">
+          <img src="img2.png" class="image-bottom" alt="Image 2">
+          <img src="img3.png" class="image-merge" alt="Image 3 Merged">
+        </div>
+      </div>
+    </div>
+
+    <!-- Box with bottom shadow -->
+    <div class="curved-box">
+      <!-- Three horizontal sections (container) -->
+      <div class="section">
+        <div class="section1">
+          <h2>Embrace the power of your<br>future and take control of it</h2>
+          <p>Sign up for the CMA Webinar<br>A complete guide to crack CMA</p>
+        </div>
+
+        <div class="container-box">
+          <div class="boxes">
+            <div class="date">WEBINAR DATE</div>
+            <div class="contents">
+              <p>26th Feb<br> 01:00 pm <br>Sunday</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="press">Register now</div>
+      </div>
+    </div>
+    <div class="cma">
+      <h1>Why CMA?</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut recusandae iusto quod quae, ad nihil
+        beatae facilis veniam, voluptatibus assumenda deleniti doloribus alias. Consequuntur ab dolores pariatur
+        fugit? Nemo, error.</p>
+    </div>
+    <div class="button" style="text-align:center">
+    <button class="btn btn-dark custom-text-color">Course Overview</button>
+    <button class="btn btn-outline-dark">Scope</button>
+    <button class="btn btn-outline-dark">Eligibility</button>
+    <button class="btn btn-outline-dark">Opportunity</button>
+    <button class="btn btn-outline-dark">Salary</button>
+     </div>
+
+     <div class="division">
+      <div class="col-md-6">
+      <p>The CMA program aims to enhance the skills and knowledge of financial professionals in areas such as financial planning, analysis, control, decision support, and professional ethics. To earn the CMA designation, individuals must meet the educational and experience requirements, as well as pass a rigorous two-part exam.</p>
+     </div>
+    
+
+      <!-- Right column with unordered list -->
+      <div class="col-md-6">
+        <ul>
+          <li>CMA USA (Certified Management Accountant) is a professional certification in the field of management accounting.</li>
+          <li>It is awarded by the Institute of Management Accountants(IMA) in the United States.</li>
+          <li>The CMA program focuses on financial planning, analysis, control, decision-support and professional ethics.</li>
+          <li>The certification demonstrates expertise and commitment to the field, and can enhance career opportunities and earning potential.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container mt-5 text-center">
+      <button class="register-btn">Register Now</button>
+    </div>
+  
+    <div class="container mt-5">
+      <div class="rows">
+        <!-- Box 1 -->
+        <div class="col-md-3">
+          <div class="square">
+            <i class="fas fa-desktop icon-top-right"></i>
+            <div>
+              <h2>45+</h2>
+              <p>On Going Batches</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Box 2 -->
+        <div class="col-md-3">
+          <div class="square">
+            <i class="fas fa-globe icon-top-right"></i>
+            <div>
+              <h2>35+</h2>
+              <p>Countries covered</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Box 3 -->
+        <div class="col-md-3">
+          <div class="square">
+            <i class="fas fa-handshake icon-top-right"></i>
+            <div>
+              <h2>128+</h2>
+              <p>Hiring Partners</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Box 4 -->
+        <div class="col-md-3">
+          <div class="square">
+            <i class="fas fa-percentage icon-top-right"></i>
+            <div>
+              <h2>90%</h2>
+              <p>Pass percentage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </main>
+  <footer>
+    <img src="./northstar logo.png" alt="image" height="70px" width="130px" />
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <!-- Dashed border box -->
+        <div class="col-md-6">
+          <div class="dashed-box">
+            
+            
+            <p>Refer a friend or colleague now and<br>receive a special benefit for your referral</p>
+          
+            <!-- Register Button with WhatsApp icon -->
+            <button class="register-btn">
+              <i class="fab fa-whatsapp"></i> Register Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="assistance">
+      <p>For prompt assistance, kindly email us at support@northstaracad.com and our<br>support team will respond to your inquiry within 24 hours.</p>
+    </div>
+  
+  </footer>
+  <!-- Bootstrap JS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Update flag in the button when a dropdown item is selected
+    $(document).ready(function () {
+      // When a country is selected from the dropdown
+      $('.dropdown-item').on('click', function () {
+        var flagClass = $(this).find('span').attr('class'); // Get the flag class
+        var countryName = $(this).data('name'); // Get country name
+
+        // Update the flag and country name in the button
+        $('#dropdownMenuButton').find('.flag-icon').attr('class', flagClass);
+      });
+    });
+  </script>
+</body>
+
+</html>
